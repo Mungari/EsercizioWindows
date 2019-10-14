@@ -8,13 +8,13 @@
   win_ping:
     data: pong
 
-- name: updates
-  win_updates:
-    category_names:
-      - CriticalUpdates
-      - SecurityUpdates
-    state: installed
-    reboot: yes
+    #- name: updates
+    #  win_updates:
+    #    category_names:
+    #      - CriticalUpdates
+    #      - SecurityUpdates
+    #    state: installed
+    #    reboot: yes
 
 - name: formattazione
   win_format:
