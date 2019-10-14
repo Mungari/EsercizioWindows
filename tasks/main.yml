@@ -1,2 +1,34 @@
 ---
-# tasks file for windowsController
+- name: install the zozz
+  win_package:
+    path: \\WINZOZZ\Users\Administrator\Documents\packages\7zip.msi
+    state: present
+
+- name: ping
+  win_ping:
+
+ - name: updates!
+   win_updates:
+     category_names:
+       - CriticalUpdates
+       - SecurityUpdates
+     state: installed
+     reboot: yes
+
+- name: formattazione
+  win_format:
+    file_system: NTFS
+    drive_letter: E
+
+- name: partizionamento
+  win_command: diskpart /s C:\Users\Administrator\Desktop\partition.txt
+
+- name: install IIS
+  win_feature:
+    name: Web-Server
+    state: present
+
+- name: proxy
+  win_http_proxy:
+    source: ie
+
